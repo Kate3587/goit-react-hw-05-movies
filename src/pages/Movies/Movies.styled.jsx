@@ -1,16 +1,15 @@
 .container{
   margin: 0 auto;
   max-width: 1200px;
+  padding: 20px 10px;
+  
 }
-.list{
-  padding: 20px;
-  background-color: #2a272788;
-  border-radius: 6px;
-  overflow: hidden;
-  color: rgb(226, 221, 221);
+.moviesList{
+  padding: 25px;
 }
+
 .messageEmpty {
-  margin: 0 auto;
+  margin: 40px auto 0;
   padding: 20px;
   background-color: #2a272788;
   border-radius: 6px;

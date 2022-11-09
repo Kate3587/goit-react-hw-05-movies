@@ -1,12 +1,24 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, NavLink} from "react-router-dom";
 
-import { Home } from "components/pages/Home/Home";
+import { Home } from "pages/Home/Home";
 
 export const App = () => {
   return (
     <>
       <header>
         <nav>
+          <ul>
+            <li>
+              <NavLink className={css.headerLink} to="/" end>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={css.headerLink} to="movies">
+                Movies
+              </NavLink>
+            </li>
+          </ul>
           <Link to="/" end>
             Home
           </Link>

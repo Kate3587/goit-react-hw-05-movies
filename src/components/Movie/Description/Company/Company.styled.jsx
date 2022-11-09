@@ -1,0 +1,15 @@
+.company{
+  display: flex;
+  align-items: center;
+  border-radius:6px;
+  overflow: hidden;
+  cursor:help;
+}
+.thumb{
+  display: block;
+  width: 100px;
+  height: auto;
+}
+.image{
+  margin-top: auto;
+}

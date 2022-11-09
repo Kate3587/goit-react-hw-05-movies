@@ -1,0 +1,18 @@
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.thumb {
+  width: 75px;
+  flex-shrink: 0;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  color: rgb(226, 221, 221);
+  font-size: 18px;
+} 
