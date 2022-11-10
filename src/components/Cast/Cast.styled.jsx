@@ -12,7 +12,7 @@ export const CastList = styled.ul`
   row-gap: 30px;
 
   padding: 20px;
-  background-color: #2a272788;
+  background-color: #3f54ef86;
   border-radius: 6px;
   overflow: hidden;
 `;

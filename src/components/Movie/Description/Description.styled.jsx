@@ -26,8 +26,8 @@ export const ExitLink = styled.div`
 
   &:hover,
   &:focus{
-    color: red;
-  border-color: red;
+    color: #fcf8f8;
+  border-color: #ff0000;
   }
 `;
 
@@ -46,10 +46,6 @@ export const DescriptionTextWrapp = styled.div`
   overflow: hidden;
   min-height: 200px;
 `
-
-// .iconBack {
-//   color: inherit;
-// }
 
 export const DescriptionOverview = styled.p`
    min-width: 600px;

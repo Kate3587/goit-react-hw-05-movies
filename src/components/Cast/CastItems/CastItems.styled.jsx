@@ -15,7 +15,7 @@ export const ItemDescription = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  color: rgb(226, 221, 221);
+  color: rgb(247, 239, 239);
   font-size: 18px;
 `;
  

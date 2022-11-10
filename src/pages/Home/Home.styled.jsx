@@ -51,7 +51,7 @@ export const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(0.30turn, #2a2727 70%, #221f1f);
+  background: linear-gradient(0.30turn, #757289 70%, #101ee4);
   opacity: 0.4;
   transition: opacity, 200ms;
 

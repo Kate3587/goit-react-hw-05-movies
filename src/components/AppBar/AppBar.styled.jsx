@@ -20,13 +20,12 @@ export const HeaderList = styled.ul`
   gap: 20px;
   list-style: none;
 `
-
 export const HeaderLink = styled.li`
   text-decoration: none;
   color:white;
 
   &:hover,
   &:focus{
-    color: red;
+    color: #2200ff;
   }
 `

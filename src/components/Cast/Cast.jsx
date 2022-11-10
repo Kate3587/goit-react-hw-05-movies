@@ -15,7 +15,7 @@ import { Wrapper, CastList, MessageTitle } from './Cast.styled';
 const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
-  const { success, loading, error, setStateMachine } = useStateMachine(
+  const { loading, error, setStateMachine } = useStateMachine(
     Status.IDLE
   );
 
