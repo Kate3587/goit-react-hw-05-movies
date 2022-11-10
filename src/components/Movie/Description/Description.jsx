@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { AiOutlineRollback } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-import { MovieAtributes } from './MovieAtributes';
-import { ProdactionCompany } from './ProdactionCompany';
-import css from './Description.module.css';
+import { DescriptionAttribute } from './DescriptionAttribute/DescriptionAttribute'
+import { Company } from './Company';
+// import css from './Description.module.css';
 
 export const Description = ({ fields, state }) => {
   const { title, movie, overview, production_companies } = fields;
@@ -16,7 +16,7 @@ export const Description = ({ fields, state }) => {
       </Link>
       <h2 className={css.mainTitle}>{title}</h2>
       <div className={css.description}>
-        <MovieAtributes movie={movie} />
+        <DescriptionAttribute movie={movie} />
         <p className={css.overview}>{overview}</p>
 
         <ul className={css.companies}>
@@ -24,7 +24,7 @@ export const Description = ({ fields, state }) => {
             if (!company.logo_path) {
               return null;
             } else {
-              return <ProdactionCompany company={company} key={company.id} />;
+              return <Company company={company} key={company.id} />;
             }
           })}
         </ul>

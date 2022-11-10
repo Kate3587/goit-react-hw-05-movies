@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { HiSearch } from 'react-icons/hi';
 
-import css from './SearchForm.module.css';
+// import css from './SearchForm.module.css';
 
 export const SearchForm = ({ onHandleSubmit }) => {
   const [query, setQuery] = useState('');

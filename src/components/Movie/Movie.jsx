@@ -2,7 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { Description } from './Description';
 import PropTypes from 'prop-types';
 
-import css from './Movie.module.css';
+// import css from './Movie.module.css';
 import { Preview } from './Preview';
 
 export const Movie = ({ movie }) => {

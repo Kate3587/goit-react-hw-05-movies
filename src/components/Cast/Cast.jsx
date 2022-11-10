@@ -1,49 +1,49 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { ACTOR } from 'services/config/matchWords';
-import { STATE } from 'services/config/page.state';
-import { useStateMachine } from 'services/hooks/stateMachine';
+import { ACTOR } from 'services/config/match';
+import { Status } from 'services/config/Status';
+import { useStateMachine } from 'helpers/hooks/stateMachine';
 
-import css from './Cast.module.css';
-import { getCast } from 'services/MovieAPI/API';
-import { CastItem } from './CastItem';
-import { Spiner } from 'components/Spiner';
-import { ErrorMesage } from 'components/ErrorMesage';
+// import css from './Cast.module.css';
+import { fetchCast } from 'services/Api/Api';
+import { CastItem } from './CastItems';
+import { Loader } from '../Loader/Loader';
+// import { ErrorMesage } from 'components/ErrorMesage';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
-  const { isResolved, isLoad, isRejected, setStateMachine } = useStateMachine(
-    STATE.IDLE
+  const { success, loading, error, setStateMachine } = useStateMachine(
+    Status.IDLE
   );
 
   useEffect(() => {
-    setStateMachine(STATE.LOAD);
+    setStateMachine(Status.LOADING);
     get();
     async function get() {
       try {
-        const { cast } = await getCast(movieId);
+        const { cast } = await fetchCast(movieId);
         setCast([...cast]);
-        setStateMachine(STATE.RESOLVE);
+        setStateMachine(Status.SUCCESS);
       } catch (error) {
-        setStateMachine(STATE.ERROR);
+        setStateMachine(Status.ERROR);
         console.log(error.message);
       }
     }
   }, [movieId, setStateMachine]);
-  const isEmpty = cast.length < 1;
+  const empty = cast.length < 1;
   return (
     <div className={css.wraper}>
-      {isLoad && <Spiner />}
-      {isRejected && <ErrorMesage />}
-      {isEmpty && (
+      {loading && <Loader />}
+      {error && <ErrorMesage />}
+      {empty && (
         <h2 className={css.messageEmpty}>
           Unfortunately, we do not have information about the actors from this
           film. :(
         </h2>
       )}
-      {isResolved && !isEmpty && (
+      {loading && !empty && (
         <ul className={css.list}>
           {cast.map(item => {
             if (item.known_for_department !== ACTOR) return null;

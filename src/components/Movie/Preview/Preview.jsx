@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-import css from './Preview.module.css';
-import defaulFilmPic from 'img/defaultMovie.jpg';
+// import css from './Preview.module.css';
+import defaultMovie from '../../../images/defaultMovie.png'
 
 export const Preview = ({ filmCard }) => {
   const { poster_path, title, name, tagline } = filmCard;
@@ -15,7 +15,7 @@ export const Preview = ({ filmCard }) => {
             src={
               poster_path
                 ? `https://image.tmdb.org/t/p/w500${poster_path}`
-                : defaulFilmPic
+                : defaultMovie
             }
             alt={title ?? name}
           />

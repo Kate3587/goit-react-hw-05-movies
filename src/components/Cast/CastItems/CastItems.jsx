@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import DefUser from 'img/defaultUser.jpg';
 
-import css from './CastItem.module.css';
+// import css from './CastItem.module.css';
 
 export const CastItem = ({ item }) => {
   const { gender, name, profile_path, character } = item;

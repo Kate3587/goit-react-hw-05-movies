@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import css from './MovieAtributes.module.css';
-export const MovieAtributes = ({ movie }) => {
+// import css from './MovieAtributes.module.css';
+export const DescriptionAttribute = ({ movie }) => {
   const {
     original_title = '',
     adult,
@@ -73,7 +73,7 @@ export const MovieAtributes = ({ movie }) => {
   );
 };
 
-MovieAtributes.propTypes = {
+DescriptionAttribute.propTypes = {
   movie: PropTypes.shape({
     original_title: PropTypes.string,
     adult: PropTypes.bool,

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
-import defaulMoviePoster from 'img/defaultMovie.jpg';
+import defaultMovie from '../../images/defaultMovie.png'
 
-import css from './MoviePreviewCard.module.css';
+// import css from './MoviePreviewCard.module.css';
 
-export const MoviePreviewCard = ({ data }) => {
+export const MovieCard = ({ data }) => {
   const { poster_path, title, release_date, id, overview } = data;
   const location = useLocation();
   return (
@@ -20,7 +20,7 @@ export const MoviePreviewCard = ({ data }) => {
             src={
               poster_path
                 ? `https://image.tmdb.org/t/p/w200${poster_path}`
-                : defaulMoviePoster
+                : defaultMovie
             }
             alt={title}
           />
@@ -35,7 +35,7 @@ export const MoviePreviewCard = ({ data }) => {
   );
 };
 
-MoviePreviewCard.propTypes = {
+MovieCard.propTypes = {
   data: PropTypes.shape({
     poster_path: PropTypes.string,
     title: PropTypes.string,

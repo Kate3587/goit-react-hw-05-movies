@@ -1,53 +1,52 @@
-import { getReview } from 'services/MovieAPI/API';
+import { fetchReview } from 'services/Api/Api';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import css from './Reviews.module.css';
-import { STATE } from 'services/config/page.state';
-import { useStateMachine } from 'services/hooks/stateMachine';
+import { Status } from 'services/config/Status';
+import { useStateMachine } from 'helpers/hooks/stateMachine';
 
-import { Spiner } from 'components/Spiner';
-import { ErrorMesage } from 'components/ErrorMesage';
-import { ReviewItem } from './ReviewItem';
+import { Loader } from 'components/Loader';
+// import { ErrorMesage } from 'components/ErrorMesage';
+import { ReviewsItem } from './ReviewsItem';
 
 const Reviews = () => {
   const [review, setReview] = useState([]);
   const { movieId } = useParams();
-  const { isResolved, isLoad, isRejected, setStateMachine } = useStateMachine(
-    STATE.IDLE
+  const { success, loading, error, setStateMachine } = useStateMachine(
+    Status.IDLE
   );
 
   useEffect(() => {
-    setStateMachine(STATE.LOAD);
+    setStateMachine(Status.LOADING);
     get();
 
     async function get() {
       try {
-        const { results } = await getReview(movieId);
+        const { results } = await fetchReview(movieId);
         setReview([...results]);
-        setStateMachine(STATE.RESOLVE);
+        setStateMachine(Status.SUCCESS);
       } catch (error) {
-        setStateMachine(STATE.ERROR);
+        setStateMachine(Status.ERROR);
         console.log(error.message);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const isEmpty = review.length < 1;
+  const empty = review.length < 1;
 
   return (
     <div className={css.container}>
-      {isLoad && <Spiner />}
-      {isRejected && <ErrorMesage />}
-      {isEmpty && (
+      {loading && <Loader />}
+      {/* {error && <ErrorMesage />} */}
+      {empty && (
         <h2 className={css.messageEmpty}>
           There are no reviews for this film yet. :(
         </h2>
       )}
-      {isResolved && !isEmpty && (
+      {success && !empty && (
         <ul className={css.list}>
           {review.map(item => (
-            <ReviewItem key={item.id} review={item} />
+            <ReviewsItem key={item.id} review={item} />
           ))}
         </ul>
       )}

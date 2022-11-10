@@ -1,6 +1,6 @@
 import { Watch } from 'react-loader-spinner';
 import css from './Spiner.module.css';
-export const Spiner = () => (
+export const Loader = () => (
   <Watch
     height="80"
     width="80"

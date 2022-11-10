@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import css from './Paginator.module.css';
+// import css from './Paginator.module.css';
 
-export const Paginator = ({ totalPages, paginationFunc, page }) => {
+export const Pagination = ({ totalPages, paginationFunc, page }) => {
   const currentPage = +page;
   return (
     <div className={css.paginator}>
@@ -25,7 +25,7 @@ export const Paginator = ({ totalPages, paginationFunc, page }) => {
   );
 };
 
-Paginator.propTypes = {
+Pagination.propTypes = {
   totalPages: PropTypes.number,
   paginationFunc: PropTypes.func,
   page: PropTypes.string,

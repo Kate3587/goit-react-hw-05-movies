@@ -5,7 +5,7 @@ import DefUser from 'img/defaultUser.jpg';
 import { MATCH_WORD } from 'services/config/matchWords';
 import { normalizeAvatar } from 'services/helpers/avatarAdressNormalize';
 
-export const ReviewItem = ({ review }) => {
+export const ReviewsItem = ({ review }) => {
   const { author, author_details, content, created_at, url } = review;
   const { avatar_path, name, rating, username } = author_details;
   return (
@@ -45,7 +45,7 @@ export const ReviewItem = ({ review }) => {
   );
 };
 
-ReviewItem.propTypes = {
+ReviewsItem.propTypes = {
   review: PropTypes.shape({
     author: PropTypes.string,
     author_details: PropTypes.shape({

@@ -3,8 +3,8 @@ import { Status } from 'services/config/Status';
 
 export const useStateMachine = init => {
   const [state, setStateMachine] = useState(init);
-  const isResolved = state === Status.SUCCESS;
-  const isLoad = state === Status.LOADING;
-  const isRejected = state === Status.ERROR;
+  const success = state === Status.SUCCESS;
+  const loading = state === Status.LOADING;
+  const error = state === Status.ERROR;
   return { isResolved, isLoad, isRejected, setStateMachine };
 };

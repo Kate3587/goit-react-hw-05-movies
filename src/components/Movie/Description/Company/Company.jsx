@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
-import css from './ProdactionCompany.module.css';
-export const ProdactionCompany = ({ company }) => {
+// import css from './ProdactionCompany.module.css';
+
+
+export const Company = ({ company }) => {
   const { logo_path, name } = company;
   return (
     <li className={css.company}>
@@ -19,7 +21,7 @@ export const ProdactionCompany = ({ company }) => {
   );
 };
 
-ProdactionCompany.propTypes = {
+Company.propTypes = {
   cologo_pathmpany: PropTypes.shape({
     logo_path: PropTypes.string,
     name: PropTypes.string,
