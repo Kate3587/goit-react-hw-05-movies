@@ -14,7 +14,7 @@ ol {
 
 body {
   margin: 0;
-  background-color: #221f1f;
+  background-color: #080128;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,7 +32,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color: red;
+  background-color: rgb(20, 34, 182);
 }
 
 img {
@@ -47,5 +47,5 @@ code {
 }
 
 a.active {
-  color: red;
+  color: rgb(181, 7, 7);
 }

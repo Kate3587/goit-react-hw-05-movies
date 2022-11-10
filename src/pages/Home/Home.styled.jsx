@@ -9,7 +9,7 @@ export const HomeTitle = styled.h2`
   text-align: center;
   font-size: 32px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgb(219, 240, 255);
   margin-bottom: 20px; 
 `;
 export const HomeList = styled.ul`
@@ -51,7 +51,7 @@ export const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(0.30turn, #757289 70%, #101ee4);
+  background: linear-gradient(0.30turn, #71707b 70%, #0e19af);
   opacity: 0.4;
   transition: opacity, 200ms;
 
