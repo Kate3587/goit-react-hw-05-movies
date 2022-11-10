@@ -19,8 +19,8 @@ export const Movie = ({ movie }) => {
   return (
     <MovieSection
       style={{
-        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.95),
-         rgba(47, 48, 58, 0.95)),
+        backgroundImage: `linear-gradient( rgba(191, 194, 245, 0.95),
+         rgba(24, 26, 45, 0.95)),
          url(https://image.tmdb.org/t/p/w500${backdrop_path})`,
       }}
     >

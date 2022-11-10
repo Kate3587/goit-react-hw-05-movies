@@ -41,7 +41,7 @@ export const DescriptionTitle = styled.h2`
 
 export const DescriptionTextWrapp = styled.div`
    padding: 10px;
-  background-color: #2a272788;
+  background-color: #0f023c7b;
   border-radius: 6px;
   overflow: hidden;
   min-height: 200px;

@@ -29,7 +29,7 @@ export const Preview = ({ filmCard }) => {
           <PictureLinkItem>
             <MoreLinkItem>
               <NavLink to="cast">
-              Learn more about cast
+              Cast
             </NavLink>
             </MoreLinkItem>
           </PictureLinkItem>

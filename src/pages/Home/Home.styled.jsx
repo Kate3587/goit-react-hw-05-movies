@@ -14,7 +14,7 @@ export const HomeTitle = styled.h2`
 `;
 export const HomeList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
   gap: 30px;
   justify-content: center;
 
@@ -27,7 +27,7 @@ export const HomeCard = styled.li`
   overflow: hidden;
 `;
 export const HomeCardLink = styled.div`
-   height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

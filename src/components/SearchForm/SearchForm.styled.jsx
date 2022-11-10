@@ -8,7 +8,7 @@ export const FormWrapper = styled.div`
   position: relative;
 `;
 export const FormInput = styled.input`
-    height: 40px;
+  height: 40px;
 
   font-size: 24px;
   color: white;
@@ -20,19 +20,19 @@ export const FormInput = styled.input`
   transition: border-color linear 200ms;
 
   &:focus{
-    border-color: red}
+    border-color: 0000ed}
   &:hover{
-  border-color: red}
+  border-color: 0000ed}
 
   &::placeholder{
  transition: color linear 200ms
 }
 
   &:focus::placeholder{
-  color:red;
+  color: #0000ed;
 }
   &:hover::placeholder{
-  color:red;
+  color :red;
 }
 `;
 

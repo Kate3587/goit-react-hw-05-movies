@@ -40,12 +40,7 @@ export const MovieCardText = styled.p`
   &:not(:last-child){
   margin-bottom: 10px;
 }
-`
+`;
 
-
-// .link:hover .subtitle,
-// .link:focus .subtitle {
-//   color:red;
-// }
 
 

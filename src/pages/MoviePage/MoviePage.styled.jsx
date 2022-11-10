@@ -13,7 +13,7 @@ export const MoviePageList = styled.ul`
 export const ExitMessage = styled.h2`
   margin: 40px auto 0;
   padding: 20px;
-  background-color: #2a272788;
+  background-color: #000f2787;
   border-radius: 6px;
   overflow: hidden;
   text-align: center;

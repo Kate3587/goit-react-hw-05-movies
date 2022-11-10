@@ -25,15 +25,6 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
-      {/* <Suspense fallback={<Loader />}></Suspense>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="movies" element={<MoviePage />}></Route>
-            <Route path="movies/:movieId" element={<MovieDetails />}></Route>
-        <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />}></Route>
-          <Route path="*" element={<Navigate to="/" replace />}></Route>
-      </Routes> */}
     </>
   );
 };
