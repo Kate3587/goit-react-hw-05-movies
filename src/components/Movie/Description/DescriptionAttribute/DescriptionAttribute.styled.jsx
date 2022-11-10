@@ -1,20 +1,20 @@
-.list{
-  margin-bottom: 40px;
-}
-.item{
+export const AttributeList = styled.ul`
+    margin-bottom: 40px;
+`;
+export const AttributeListItem = styled.li`
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: baseline;
-}
 
-.item:not(:last-child){
+  &:not(:last-child){
   margin-bottom: 20px;
 }
-.paramName{
+`;
+export const ItemName = styled.p`
   color:rgb(226, 221, 221);
   font-size: 20px;  
-}
-.property{
+`;
+export const ItemProperty = styled.p`
   font-size: 16px;
   color: rgb(170, 167, 167);
-}
+`;

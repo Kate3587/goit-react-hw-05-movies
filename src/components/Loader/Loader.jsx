@@ -1,14 +1,25 @@
-import { Watch } from 'react-loader-spinner';
+import { BallTriangle } from 'react-loader-spinner';
 import css from './Spiner.module.css';
 export const Loader = () => (
-  <Watch
-    height="80"
-    width="80"
-    radius="48"
+  <BallTriangle
+    height={100}
+    width={100}
+    radius={5}
     color="red"
     ariaLabel="watch-loading"
     wrapperStyle
-    wrapperClass={css.spiner}
+    wrapperClass={css.loader}
     visible={true}
   />
 );
+
+{/* <BallTriangle
+  height={100}
+  width={100}
+  radius={5}
+  color="#4fa94d"
+  ariaLabel="ball-triangle-loading"
+  wrapperClass={{}}
+  wrapperStyle=""
+  visible={true}
+/> */}

@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-// import css from './Preview.module.css';
-import defaultMovie from '../../../images/defaultMovie.png'
+import defaultMovie from '../../../images/defaultMovie.png';
+import {
+  PreviewWrapp, PreviewPicture, PictureThumb,
+  PictureTag, PictureLink, PictureLinkItem, MoreLinkItem
+} from './Preview.styled';
 
 export const Preview = ({ filmCard }) => {
   const { poster_path, title, name, tagline } = filmCard;
   return (
-    <div className={css.preview}>
-      <div className={css.picture}>
-        <div className={css.thumb}>
+    <PreviewWrapp>
+      <PreviewPicture>
+        <PictureThumb>
           <img
             width={'300px'}
             src={
@@ -19,23 +22,27 @@ export const Preview = ({ filmCard }) => {
             }
             alt={title ?? name}
           />
-        </div>
-        <p className={css.tag}>{tagline}</p>
+        </PictureThumb>
+        <PictureTag>{tagline}</PictureTag>
 
-        <ul className={css.links}>
-          <li className={css.linkItem}>
-            <NavLink className={css.learnMore} to="cast">
+        <PictureLink>
+          <PictureLinkItem>
+            <MoreLinkItem>
+              <NavLink to="cast">
               Learn more about cast
             </NavLink>
-          </li>
-          <li className={css.linkItem}>
-            <NavLink className={css.learnMore} to="reviews">
+            </MoreLinkItem>
+          </PictureLinkItem>
+          <PictureLinkItem>
+            <MoreLinkItem>
+              <NavLink to="reviews">
               Reviews
             </NavLink>
-          </li>
-        </ul>
-      </div>
-    </div>
+            </MoreLinkItem>
+          </PictureLinkItem>
+        </PictureLink>
+      </PreviewPicture>
+    </PreviewWrapp>
   );
 };
 

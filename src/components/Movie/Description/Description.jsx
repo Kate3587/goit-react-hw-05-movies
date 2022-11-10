@@ -4,22 +4,28 @@ import { Link } from 'react-router-dom';
 
 import { DescriptionAttribute } from './DescriptionAttribute/DescriptionAttribute'
 import { Company } from './Company';
-// import css from './Description.module.css';
+import {
+  DescriptionText, ExitLink, DescriptionTitle,
+  DescriptionTextWrapp, DescriptionOverview, DescriptionCompanyList
+} from './Description.styled';
 
 export const Description = ({ fields, state }) => {
   const { title, movie, overview, production_companies } = fields;
   return (
-    <div className={css.text}>
-      <Link to={state?.from ?? '/'} className={css.goBackLink}>
-        <span>Go back!</span>
-        <AiOutlineRollback className={css.iconBack} />
-      </Link>
-      <h2 className={css.mainTitle}>{title}</h2>
-      <div className={css.description}>
+    <DescriptionText>
+      <ExitLink>
+        <Link to={state?.from ?? '/'}>
+          <span>Go back!</span>
+          <AiOutlineRollback className={css.iconBack} />
+        </Link>
+      </ExitLink>
+      
+      <DescriptionTitle>{title}</DescriptionTitle>
+      <DescriptionTextWrapp>
         <DescriptionAttribute movie={movie} />
-        <p className={css.overview}>{overview}</p>
+        <DescriptionOverview>{overview}</DescriptionOverview>
 
-        <ul className={css.companies}>
+        <DescriptionCompanyList>
           {production_companies.map(company => {
             if (!company.logo_path) {
               return null;
@@ -27,9 +33,9 @@ export const Description = ({ fields, state }) => {
               return <Company company={company} key={company.id} />;
             }
           })}
-        </ul>
-      </div>
-    </div>
+        </DescriptionCompanyList>
+      </DescriptionTextWrapp>
+    </DescriptionText>
   );
 };
 

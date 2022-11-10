@@ -5,11 +5,11 @@ import { ACTOR } from 'services/config/match';
 import { Status } from 'services/config/Status';
 import { useStateMachine } from 'helpers/hooks/stateMachine';
 
-// import css from './Cast.module.css';
 import { fetchCast } from 'services/Api/Api';
-import { CastItem } from './CastItems';
+import { CastItems } from './CastItems';
 import { Loader } from '../Loader/Loader';
 // import { ErrorMesage } from 'components/ErrorMesage';
+import { Wrapper, CastList, MessageTitle } from './Cast.styled';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -34,24 +34,23 @@ const Cast = () => {
   }, [movieId, setStateMachine]);
   const empty = cast.length < 1;
   return (
-    <div className={css.wraper}>
+    <Wrapper>
       {loading && <Loader />}
       {error && <ErrorMesage />}
       {empty && (
-        <h2 className={css.messageEmpty}>
-          Unfortunately, we do not have information about the actors from this
-          film. :(
-        </h2>
+        <MessageTitle>
+          We don't have any information about actors.
+        </MessageTitle>
       )}
       {loading && !empty && (
-        <ul className={css.list}>
+        <CastList>
           {cast.map(item => {
             if (item.known_for_department !== ACTOR) return null;
-            return <CastItem key={item.id} item={item} />;
+            return <CastItems key={item.id} item={item} />;
           })}
-        </ul>
+        </CastList>
       )}
-    </div>
+    </Wrapper>
   );
 };
 export default Cast;

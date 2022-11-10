@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import DefUser from 'img/defaultUser.jpg';
 
-// import css from './CastItem.module.css';
+import { CastListItem, ItemWrapp, ItemDescription } from './CastItems.styled';
 
-export const CastItem = ({ item }) => {
+export const CastItems = ({ item }) => {
   const { gender, name, profile_path, character } = item;
   return (
-    <li className={css.item}>
-      <div className={css.thumb}>
+    <CastListItem>
+      <ItemWrapp>
         <img
           width={'75px'}
           src={
@@ -17,17 +17,17 @@ export const CastItem = ({ item }) => {
           }
           alt={name}
         />
-      </div>
-      <div className={css.description}>
+      </ItemWrapp>
+      <ItemDescription>
         {character && <p>{character}</p>}
         {name && <p>{name}</p>}
         {gender && <p>{gender === 1 ? 'Female' : 'Male'}</p>}
-      </div>
-    </li>
+      </ItemDescription>
+    </CastListItem>
   );
 };
 
-CastItem.propTypes = {
+CastItems.propTypes = {
   item: PropTypes.shape({
     gender: PropTypes.number,
     name: PropTypes.string,

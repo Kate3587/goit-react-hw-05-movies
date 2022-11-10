@@ -1,13 +1,13 @@
-.filmSection {
+export const MovieSection = styled.section`
   background-attachment: fixed;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 20px 10px;
-}
+`;
 
-.film {
-  display: flex;
+export const MovieWrapp = styled.div`
+    display: flex;
   gap: 30px;
 
   max-width: 1200px;
@@ -16,5 +16,7 @@
   padding: 20px 10px;
 
   color:white;
-}
+`;
+
+
 

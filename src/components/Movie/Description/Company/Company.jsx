@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-// import css from './ProdactionCompany.module.css';
+import { CompanyItem, CompanyItemThumb, CompanyItemImage } from './Company.styled';
 
 
 export const Company = ({ company }) => {
   const { logo_path, name } = company;
   return (
-    <li className={css.company}>
-      <div className={css.thumb}>
+    <CompanyItem>
+      <CompanyItemThumb>
         {logo_path && (
-          <img
+          <CompanyItemImage
             width={'100px'}
             title={name}
             className={css.image}
@@ -16,8 +16,8 @@ export const Company = ({ company }) => {
             alt={name}
           />
         )}
-      </div>
-    </li>
+      </CompanyItemThumb>
+    </CompanyItem>
   );
 };
 

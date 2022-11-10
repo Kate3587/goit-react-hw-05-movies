@@ -1,30 +1,32 @@
 import { Link, Route, Routes, NavLink} from "react-router-dom";
 
 import Home from "pages/Home";
+import { Header, HeaderList, HeaderLink } from "./App.styled";
+
 
 export const App = () => {
   return (
     <>
-      <header>
+      <Header>
         <nav>
-          <ul>
-            <li>
+          <HeaderList>
+            <HeaderLink>
               <NavLink className={css.headerLink} to="/" end>
                 Home
               </NavLink>
-            </li>
-            <li>
+            </HeaderLink>
+            <HeaderLink>
               <NavLink className={css.headerLink} to="movies">
                 Movies
               </NavLink>
-            </li>
-          </ul>
+            </HeaderLink>
+          </HeaderList>
           <Link to="/" end>
             Home
           </Link>
           <Link to="/movies">Movies</Link>
         </nav>
-      </header>
+      </Header>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="movies" element={<Movies />}></Route>
