@@ -7,8 +7,9 @@ import { useStateMachine } from 'helpers/hooks/stateMachine';
 
 import { Loader } from 'components/Loader';
 import { ReviewsItem } from './ReviewsItem';
+import { ErrorMessage } from 'components/ErrorMessage';
 
-import { ReviewsContainer, ReviewsList } from './Reviews.styled';
+import { ReviewsContainer, ReviewsList, ExitMessage} from './Reviews.styled';
 
 const Reviews = () => {
   const [review, setReview] = useState([]);
@@ -37,7 +38,7 @@ const Reviews = () => {
   return (
     <ReviewsContainer>
       {loading && <Loader />}
-      {/* {error && <ErrorMesage />} */}
+      {error && <ErrorMessage />}
       {empty && (
         <ExitMessage>
           We don't have any reviewsfor this movie.

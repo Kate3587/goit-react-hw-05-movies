@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const MovieSection = styled.section`
   background-attachment: fixed;
   background-position: top center;

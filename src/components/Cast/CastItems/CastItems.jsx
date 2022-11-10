@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import DefUser from 'img/defaultUser.jpg';
+import defaultUser from '../../../images/defaultUser.png'
 
 import { CastListItem, ItemWrapp, ItemDescription } from './CastItems.styled';
 
@@ -13,7 +13,7 @@ export const CastItems = ({ item }) => {
           src={
             profile_path
               ? `https://image.tmdb.org/t/p/w500${profile_path}`
-              : DefUser
+              : defaultUser
           }
           alt={name}
         />

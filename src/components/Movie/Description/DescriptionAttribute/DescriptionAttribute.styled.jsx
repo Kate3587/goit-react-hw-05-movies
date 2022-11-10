@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const AttributeList = styled.ul`
     margin-bottom: 40px;
 `;

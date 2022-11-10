@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const PaginationWrapp = styled.div`
   text-align: center;
 `;

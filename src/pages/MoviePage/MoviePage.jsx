@@ -9,8 +9,8 @@ import { MovieCard } from 'components/MovieCard';
 import { Pagination } from 'components/Pagination';
 import { SearchForm } from 'components/SearchForm';
 import { Loader } from 'components/Loader';
-import { ErrorMesage } from 'components/ErrorMesage';
-import {MoviePageWrapp, MoviePageList} from './MoviePage.styled'
+import { ErrorMessage } from 'components/ErrorMessage';
+import {MoviePageWrapp, MoviePageList, ExitMessage} from './MoviePage.styled'
 
 
 const MoviePage = () => {
@@ -70,7 +70,7 @@ const MoviePage = () => {
           Sorry, we haven't any information about film {query}.
         </ExitMessage>
       )}
-      {error && <ErrorMesage />}
+      {error && <ErrorMessage />}
       {totalPages > 1 && succes && (
         <Pagination
           totalPages={totalPages}

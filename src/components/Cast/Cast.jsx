@@ -8,8 +8,9 @@ import { useStateMachine } from 'helpers/hooks/stateMachine';
 import { fetchCast } from 'services/Api/Api';
 import { CastItems } from './CastItems';
 import { Loader } from '../Loader/Loader';
-// import { ErrorMesage } from 'components/ErrorMesage';
+import { ErrorMessage } from 'components/ErrorMessage';
 import { Wrapper, CastList, MessageTitle } from './Cast.styled';
+
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -36,7 +37,7 @@ const Cast = () => {
   return (
     <Wrapper>
       {loading && <Loader />}
-      {error && <ErrorMesage />}
+      {error && <ErrorMessage />}
       {empty && (
         <MessageTitle>
           We don't have any information about actors.

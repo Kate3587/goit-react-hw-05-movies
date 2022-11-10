@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const CastListItem = styled.li`
   display: flex;
   gap: 10px;

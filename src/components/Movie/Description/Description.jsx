@@ -15,8 +15,8 @@ export const Description = ({ fields, state }) => {
     <DescriptionText>
       <ExitLink>
         <Link to={state?.from ?? '/'}>
-          <span>Go back!</span>
-          <AiOutlineRollback className={css.iconBack} />
+          <span>Turn back</span>
+          <AiOutlineRollback />
         </Link>
       </ExitLink>
       

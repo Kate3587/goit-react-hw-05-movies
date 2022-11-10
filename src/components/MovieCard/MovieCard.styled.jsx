@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const MovieCardItem = styled.li`
   padding: 10px;
   background-color: #2a272788;

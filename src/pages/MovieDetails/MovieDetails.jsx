@@ -7,7 +7,7 @@ import { useStateMachine } from 'helpers/hooks/stateMachine';
 
 import { Movie } from 'components/Movie';
 import { Loader } from 'components/Loader';
-import { ErrorMesage } from 'components/ErrorMesage';
+import { ErrorMessage } from 'components/ErrorMessage';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -34,7 +34,7 @@ const MovieDetails = () => {
 
   if (success) return <Movie movie={movie} />;
   if (loading) return <Loader />;
-  if (error) return <ErrorMesage />;
+  if (error) return <ErrorMessage />;
 };
 
 export default MovieDetails;

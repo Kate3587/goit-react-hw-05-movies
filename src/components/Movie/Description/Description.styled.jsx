@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const DescriptionText = styled.div`
    position: relative;
     order: 1;

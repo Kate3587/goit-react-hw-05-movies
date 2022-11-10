@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const CompanyItem = styled.li`
    display: flex;
   align-items: center;

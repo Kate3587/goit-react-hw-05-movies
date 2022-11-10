@@ -15,9 +15,7 @@ export const MovieCard = ({ data }) => {
         <Link
         to={`/movies/${id}`}
         state={{ from: location }}
-      ></Link>
-      </MovieCardItemLink>
-      
+        >
         <MovieCardImgThumb>
           <img
             width={'100px'}
@@ -34,7 +32,8 @@ export const MovieCard = ({ data }) => {
           <MovieCardText>{release_date}</MovieCardText>
           <MovieCardText>{overview}</MovieCardText>
         </span>
-      </Link>
+        </Link>
+        </MovieCardItemLink>
     </MovieCardItem>
   );
 };

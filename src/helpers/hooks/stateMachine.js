@@ -6,5 +6,5 @@ export const useStateMachine = init => {
   const success = state === Status.SUCCESS;
   const loading = state === Status.LOADING;
   const error = state === Status.ERROR;
-  return { isResolved, isLoad, isRejected, setStateMachine };
+  return { success, loading, error, setStateMachine };
 };

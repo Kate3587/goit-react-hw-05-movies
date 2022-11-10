@@ -1,11 +1,4 @@
-@keyframes visible{
-  0% {
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}
+import styled from "styled-components";
 
 export const FormForSearch = styled.form`
   display: flex;

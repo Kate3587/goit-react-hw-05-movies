@@ -11,7 +11,6 @@ export const Company = ({ company }) => {
           <CompanyItemImage
             width={'100px'}
             title={name}
-            className={css.image}
             src={`https://image.tmdb.org/t/p/original${logo_path}`}
             alt={name}
           />

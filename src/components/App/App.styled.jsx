@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const Header = styled.header`
   width: 100%;
   height: 60px;
@@ -9,7 +11,7 @@ export const Header = styled.header`
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, .1);
   box-sizing: border-box;
-`;
+`
 
 export const HeaderList = styled.ul`
   margin: 0 auto;
@@ -17,12 +19,8 @@ export const HeaderList = styled.ul`
   display: flex;
   gap: 20px;
   list-style: none;
-`;
+`
 
-
-// .headerItem:first-child{
-//   margin-left: 35px;
-// }
 export const HeaderLink = styled.li`
   text-decoration: none;
   color:white;
@@ -32,8 +30,3 @@ export const HeaderLink = styled.li`
     color: red;
   }
 `
-
-
-// :hover.headerLink,:focus.headerLink{
-//   color: red;
-// }

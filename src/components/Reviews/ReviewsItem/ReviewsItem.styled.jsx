@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const ReviewItemWrap = styled.li`
   padding: 10px;
   border: 2px solid rgb(170, 167, 167);

@@ -1,30 +1,32 @@
 import PropTypes from 'prop-types';
 import { AiOutlineLink } from 'react-icons/ai';
-import css from './ReviewItem.module.css';
-import DefUser from 'img/defaultUser.jpg';
-import { MATCH_WORD } from 'services/config/matchWords';
-import { normalizeAvatar } from 'services/helpers/avatarAdressNormalize';
+import defaultUser from '../../../images/defaultUser.png';
+import { MATCH_WORD } from 'services/config/match';
+import {normalizeAvatar} from '../../../helpers/Avatar'
 import {
   ReviewItemWrap, ReviewCard, ReviewCardThumb, UserText,
-UserRating, ReviewContent, ReviewLink, ReviewData} from './ReviewsItem.styled'
+  UserRating, ReviewContent, ReviewLink, ReviewData
+} from './ReviewsItem.styled';
+
+
 
 export const ReviewsItem = ({ review }) => {
   const { author, author_details, content, created_at, url } = review;
   const { avatar_path, name, rating, username } = author_details;
   return (
     <ReviewItemWrap>
-      <article className={css.unit}>
+      <article>
         <ReviewCard>
           <ReviewCardThumb>
             <img
               width={'75px'}
               src={
-                avatar_path ? normalizeAvatar(avatar_path, MATCH_WORD) : DefUser
+                avatar_path ? normalizeAvatar(avatar_path, MATCH_WORD) : defaultUser
               }
               alt={author}
             />
           </ReviewCardThumb>
-          <div className={css.userData}>
+          <div>
             <UserText>@{username}</UserText>
             <UserText>{name}</UserText>
             <UserRating>{rating}</UserRating>
