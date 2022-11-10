@@ -8,7 +8,7 @@ export const Header = styled.header`
   font-size: 16px;
   letter-spacing: -.2px;
   line-height: 60px;
-  color: #fff;
+  color: #ffffffe3;
   border-bottom: 1px solid rgba(255, 255, 255, .1);
   box-sizing: border-box;
 `

@@ -9,7 +9,7 @@ export const HomeTitle = styled.h2`
   text-align: center;
   font-size: 32px;
   font-weight: 700;
-  color: rgb(219, 240, 255);
+  color: rgba(205, 224, 238, 0.905);
   margin-bottom: 20px; 
 `;
 export const HomeList = styled.ul`
