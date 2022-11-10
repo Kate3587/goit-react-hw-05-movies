@@ -1,6 +1,16 @@
-import { Link, Route, Routes, NavLink} from "react-router-dom";
+import { lazy, Suspense } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+// import Header from 'components/Header';
 
-import Home from "pages/Home";
+import Cast from 'components/Cast/Cast';
+import Reviews from 'components/Reviews/Reviews';
+import { Loader } from 'components/Loader';
+
+const Home = lazy(() => import('pages/Home'));
+const MoviePage = lazy(() => import('pages/MoviePage'));
+const MovieDetails = lazy(() => import('pages/MovieDetails'));
+
+// import Home from "pages/Home";
 import { Header, HeaderList, HeaderLink } from "./App.styled";
 
 
@@ -11,12 +21,12 @@ export const App = () => {
         <nav>
           <HeaderList>
             <HeaderLink>
-              <NavLink className={css.headerLink} to="/" end>
+              <NavLink to="/" end>
                 Home
               </NavLink>
             </HeaderLink>
             <HeaderLink>
-              <NavLink className={css.headerLink} to="movies">
+              <NavLink to="movies">
                 Movies
               </NavLink>
             </HeaderLink>
@@ -27,6 +37,7 @@ export const App = () => {
           <Link to="/movies">Movies</Link>
         </nav>
       </Header>
+      <Suspense fallback={<Loader />}></Suspense>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="movies" element={<Movies />}></Route>
