@@ -1,24 +1,23 @@
-.paginator{
+export const PaginationWrapp = styled.div`
   text-align: center;
-}
+`;
 
-.list{
+export const PaginationList = styled.ul`
   display: inline-block;
   background-color: #817d7d88;
   border-radius: 6px;
   overflow: hidden;
-}
+`;
 
-.item{
+export const PaginationListItem = styled.li`
   display: inline-flex;
   justify-content: center;
   align-items: center;
   height: 40px;
   min-width: 40px;
+`;
 
-}
-
-.button{
+export const PaginationBtn = styled.button`
   padding: 5px;
   width: 100%;
   height: 100%;
@@ -29,10 +28,10 @@
   background-color: transparent;
   border: none;
   transition: background-color linear 200ms;
-}
+`;
 
-.active{
-  padding: 5px;
+export const Active = styled.button`
+   padding: 5px;
   width: 100%;
   height: 100%;
 
@@ -43,11 +42,29 @@
   border: none;
   transition: background-color linear 200ms;
   background-color: #a19c9c88;
-}
+`
 
 
-.button:hover,
-.button:focus {
-  background-color: #a19c9c88;
-  cursor: pointer;
-}
+
+
+
+// .active{
+//   padding: 5px;
+//   width: 100%;
+//   height: 100%;
+
+//   color: white;
+//   font-size: 18px;
+
+//   background-color: transparent;
+//   border: none;
+//   transition: background-color linear 200ms;
+//   background-color: #a19c9c88;
+// }
+
+
+// .button:hover,
+// .button:focus {
+//   background-color: #a19c9c88;
+//   cursor: pointer;
+// }

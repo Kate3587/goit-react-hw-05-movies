@@ -1,0 +1,10 @@
+// export const MessageTextError = styled.h2`
+//   margin-top: 50px;
+//   padding: 20px;
+//   background-color: #2a272788;
+//   border-radius: 6px;
+//   overflow: hidden;
+
+//   text-align: center;
+//   color: rgb(226, 221, 221); 
+// `;

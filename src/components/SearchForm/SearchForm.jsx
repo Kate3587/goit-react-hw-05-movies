@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { HiSearch } from 'react-icons/hi';
-
-// import css from './SearchForm.module.css';
+import { FormForSearch, FormWrapper, FormInput, FormBtn } from './SearchForm.styled';
 
 export const SearchForm = ({ onHandleSubmit }) => {
   const [query, setQuery] = useState('');
@@ -14,22 +13,21 @@ export const SearchForm = ({ onHandleSubmit }) => {
   };
 
   return (
-    <form className={css.form} onSubmit={onSubmit}>
-      <div className={css.wrapper}>
-        <input
+    <FormForSearch onSubmit={onSubmit}>
+      <FormWrapper>
+        <FormInput
           name="film"
           onChange={onChange}
           placeholder="Film name"
-          className={css.input}
           value={query}
         />
         {query && (
-          <button className={css.button} type="submit">
+          <FormBtn type="submit">
             <HiSearch />
-          </button>
+          </FormBtn>
         )}
-      </div>
-    </form>
+      </FormWrapper>
+    </FormForSearch>
   );
 };
 SearchForm.propTypes = {

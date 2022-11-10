@@ -2,13 +2,13 @@ import { fetchReview } from 'services/Api/Api';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import css from './Reviews.module.css';
 import { Status } from 'services/config/Status';
 import { useStateMachine } from 'helpers/hooks/stateMachine';
 
 import { Loader } from 'components/Loader';
-// import { ErrorMesage } from 'components/ErrorMesage';
 import { ReviewsItem } from './ReviewsItem';
+
+import { ReviewsContainer, ReviewsList } from './Reviews.styled';
 
 const Reviews = () => {
   const [review, setReview] = useState([]);
@@ -35,22 +35,22 @@ const Reviews = () => {
   const empty = review.length < 1;
 
   return (
-    <div className={css.container}>
+    <ReviewsContainer>
       {loading && <Loader />}
       {/* {error && <ErrorMesage />} */}
       {empty && (
-        <h2 className={css.messageEmpty}>
-          There are no reviews for this film yet. :(
-        </h2>
+        <ExitMessage>
+          We don't have any reviewsfor this movie.
+        </ExitMessage>
       )}
       {success && !empty && (
-        <ul className={css.list}>
+        <ReviewsList>
           {review.map(item => (
             <ReviewsItem key={item.id} review={item} />
           ))}
-        </ul>
+        </ReviewsList>
       )}
-    </div>
+    </ReviewsContainer>
   );
 };
 

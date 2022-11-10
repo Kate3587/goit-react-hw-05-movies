@@ -4,15 +4,18 @@ import css from './ReviewItem.module.css';
 import DefUser from 'img/defaultUser.jpg';
 import { MATCH_WORD } from 'services/config/matchWords';
 import { normalizeAvatar } from 'services/helpers/avatarAdressNormalize';
+import {
+  ReviewItemWrap, ReviewCard, ReviewCardThumb, UserText,
+UserRating, ReviewContent, ReviewLink, ReviewData} from './ReviewsItem.styled'
 
 export const ReviewsItem = ({ review }) => {
   const { author, author_details, content, created_at, url } = review;
   const { avatar_path, name, rating, username } = author_details;
   return (
-    <li className={css.item}>
+    <ReviewItemWrap>
       <article className={css.unit}>
-        <div className={css.userCard}>
-          <div className={css.thumb}>
+        <ReviewCard>
+          <ReviewCardThumb>
             <img
               width={'75px'}
               src={
@@ -20,28 +23,27 @@ export const ReviewsItem = ({ review }) => {
               }
               alt={author}
             />
-          </div>
+          </ReviewCardThumb>
           <div className={css.userData}>
-            <p className={css.userText}>@{username}</p>
-            <p className={css.userText}>{name}</p>
-            <p className={css.rating}>{rating}</p>
+            <UserText>@{username}</UserText>
+            <UserText>{name}</UserText>
+            <UserRating>{rating}</UserRating>
           </div>
-          <p className={css.data}> {new Date(created_at).toLocaleString()}</p>
-        </div>
-        <div className={css.reviewContent}>
+          <ReviewData> {new Date(created_at).toLocaleString()}</ReviewData>
+        </ReviewCard>
+        <ReviewContent>
           <p>{content}</p>
-        </div>
-        <a
-          className={css.link}
+        </ReviewContent>
+        <ReviewLink
           href={url}
           rel="noreferrer nofollow noopener"
           target='"_blank"'
         >
           Original
-          {<AiOutlineLink className={css.icon} />}
-        </a>
+          {<AiOutlineLink width="20px" height="20px" />}
+        </ReviewLink>
       </article>
-    </li>
+    </ReviewItemWrap>
   );
 };
 

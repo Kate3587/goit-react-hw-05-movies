@@ -1,27 +1,31 @@
 import PropTypes from 'prop-types';
-// import css from './Paginator.module.css';
+import {
+  PaginationWrapp, PaginationList, PaginationListItem,
+  PaginationBtn, Active
+} from './Pagination.styled';
+
 
 export const Pagination = ({ totalPages, paginationFunc, page }) => {
   const currentPage = +page;
   return (
-    <div className={css.paginator}>
-      <ul className={css.list}>
+    <PaginationWrapp>
+      <PaginationList>
         {[...Array(totalPages)].map((_, number) => {
           const nextPage = number + 1;
           return (
-            <li key={number} className={css.item}>
-              <button
-                className={currentPage !== nextPage ? css.button : css.active}
+            <PaginationListItem>
+              <PaginationBtn
+                className={currentPage !== nextPage ? <PaginationListItem/> : <Active/>}
                 onClick={() => paginationFunc({ number: nextPage })}
                 type="button"
               >
                 {nextPage}
-              </button>
-            </li>
+              </PaginationBtn>
+            </PaginationListItem>
           );
         })}
-      </ul>
-    </div>
+      </PaginationList>
+    </PaginationWrapp>
   );
 };
 

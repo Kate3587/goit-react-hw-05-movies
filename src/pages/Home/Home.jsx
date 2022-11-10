@@ -1,64 +1,68 @@
 import { useEffect, useState } from 'react';
-import { getMovies } from 'services/MovieAPI/API';
+import { fetchMovies } from 'services/Api/Api';
 import { Link } from 'react-router-dom';
 
-import { STATE } from 'services/config/page.state';
-import { useStateMachine } from 'services/hooks/stateMachine';
-import css from './Home.module.css';
-
-import { Spiner } from 'components/Spiner';
-import { ErrorMesage } from 'components/ErrorMesage';
+import { Status } from 'services/config/Status';
+import { useStateMachine } from 'helpers/hooks/stateMachine';
+import { Loader } from 'components/Loader';
+import { ErrorMessage } from 'components/ErrorMessage';
+import {
+  HomeSection, HomeTitle, HomeList, HomeCard,
+  HomeCardLink, Overlay, Wrapp, HomeFilmName
+} from './Home.styled';
 
 const Home = () => {
   const [films, setFilms] = useState([]);
-  const { isResolved, isLoad, isRejected, setStateMachine } = useStateMachine(
-    STATE.IDLE
+  const { success, loading, error, setStateMachine } = useStateMachine(
+    Status.IDLE
   );
 
   useEffect(() => {
-    setStateMachine(STATE.LOAD);
+    setStateMachine(Status.LOADING);
     get();
 
     async function get() {
       try {
-        const { results } = await getMovies();
+        const { results } = await fetchMovies();
         setFilms([...results]);
-        setStateMachine(STATE.RESOLVE);
+        setStateMachine(Status.SUCCESS);
       } catch (error) {
-        setStateMachine(STATE.ERROR);
+        setStateMachine(Status.ERROR);
         console.log(error.message);
       }
     }
   }, [setStateMachine]);
 
   return (
-    <section className={css.films}>
-      <h2 className={css.mainTitle}>Most trending films today</h2>
-      {isLoad && <Spiner />}
-      {isRejected && <ErrorMesage />}
-      {isResolved && (
-        <ul className={css.gallery}>
+    <HomeSection>
+      <HomeTitle>Trending today</HomeTitle>
+      {loading && <Loader />}
+      {error && <ErrorMessage />}
+      {success && (
+        <HomeList>
           {films.map(({ id, name, title, poster_path }) => {
             return (
-              <li key={id} className={css.card}>
-                <Link className={css.link} to={`/movies/${id}`}>
-                  <div className={css.thumb}>
-                    <div className={css.overlay}></div>
-
+              <HomeCard key={id}>
+                <HomeCardLink>
+                <Link to={`/movies/${id}`}>
+                  <Wrapp>
+                    <Overlay></Overlay>
                     <img
                       width={'250px'}
                       src={`https://image.tmdb.org/t/p/w400${poster_path}`}
                       alt={name ?? title}
                     />
-                  </div>
-                  <p className={css.filmName}>{name ?? title}</p>
+                  </Wrapp>
+                  <HomeFilmName>{name ?? title}</HomeFilmName>
                 </Link>
-              </li>
+                </HomeCardLink>
+                
+              </HomeCard>
             );
           })}
-        </ul>
+        </HomeList>
       )}
-    </section>
+    </HomeSection>
   );
 };
 

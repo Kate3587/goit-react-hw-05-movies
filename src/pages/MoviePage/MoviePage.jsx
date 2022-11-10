@@ -1,23 +1,24 @@
-import { getMovieByName } from 'services/MovieAPI/API';
+import { fetchMovieByName } from 'services/Api/Api';
 import { useEffect, useState } from 'react';
-import { MoviePreviewCard } from 'components/MoviePreviewCard';
-
-import css from './Movies.module.css';
-import { STATE } from 'services/config/page.state';
-import { useStateMachine } from 'services/hooks/stateMachine';
-
-import { Paginator } from 'components/Paginator';
-import { SearchForm } from 'components/SearchForm';
-import { Spiner } from 'components/Spiner';
-import { ErrorMesage } from 'components/ErrorMesage';
 import { useSearchParams } from 'react-router-dom';
+
+
+import { Status } from 'services/config/Status';
+import { useStateMachine } from 'helpers/hooks/stateMachine';
+import { MovieCard } from 'components/MovieCard';
+import { Pagination } from 'components/Pagination';
+import { SearchForm } from 'components/SearchForm';
+import { Loader } from 'components/Loader';
+import { ErrorMesage } from 'components/ErrorMesage';
+import {MoviePageWrapp, MoviePageList} from './MoviePage.styled'
+
 
 const MoviePage = () => {
   const [movies, setMovies] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [query, setQuery] = useSearchParams();
-  const { isResolved, isLoad, isRejected, setStateMachine } = useStateMachine(
-    STATE.IDLE
+  const { succes, loading, error, setStateMachine } = useStateMachine(
+    Status.IDLE
   );
 
   const filmNameStr = query.get('filmName') ?? '';
@@ -29,21 +30,21 @@ const MoviePage = () => {
 
   useEffect(() => {
     if (filmNameStr) {
-      setStateMachine(STATE.LOAD);
+      setStateMachine(Status.LOADING);
       get();
     }
 
     async function get() {
       try {
-        const { results, total_pages } = await getMovieByName(
+        const { results, total_pages } = await fetchMovieByName(
           filmNameStr,
           pageStr
         );
         setMovies([...results]);
         setTotalPages(total_pages);
-        setStateMachine(STATE.RESOLVE);
+        setStateMachine(Status.SUCCESS);
       } catch (error) {
-        setStateMachine(STATE.ERROR);
+        setStateMachine(Status.ERROR);
         console.log(error.message);
       }
     }
@@ -51,33 +52,33 @@ const MoviePage = () => {
 
   const moviesAmount = movies.length;
   return (
-    <section className={css.container}>
+    <MoviePageWrapp>
       <SearchForm onHandleSubmit={handleWriteQuery} />
-      {isLoad && <Spiner />}
-      {moviesAmount > 0 && isResolved && (
-        <ul className={css.moviesList}>
+      {loading && <Loader />}
+      {moviesAmount > 0 && succes && (
+        <MoviePageList>
           {movies.map(({ poster_path, title, id, release_date, overview }) => (
-            <MoviePreviewCard
+            <MovieCard
               key={id}
               data={{ poster_path, title, release_date, id, overview }}
             />
           ))}
-        </ul>
+        </MoviePageList>
       )}
-      {isResolved && moviesAmount === 0 && (
-        <h2 className={css.messageEmpty}>
-          Unfortunately, we do not have information about film like {query}. :(
-        </h2>
+      {succes && moviesAmount === 0 && (
+        <ExitMessage>
+          Sorry, we haven't any information about film {query}.
+        </ExitMessage>
       )}
-      {isRejected && <ErrorMesage />}
-      {totalPages > 1 && isResolved && (
-        <Paginator
+      {error && <ErrorMesage />}
+      {totalPages > 1 && succes && (
+        <Pagination
           totalPages={totalPages}
           page={pageStr}
           paginationFunc={handleWriteQuery}
         />
       )}
-    </section>
+    </MoviePageWrapp>
   );
 };
 

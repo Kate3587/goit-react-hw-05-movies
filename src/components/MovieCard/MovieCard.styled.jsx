@@ -1,39 +1,49 @@
-.item{
+export const MovieCardItem = styled.li`
   padding: 10px;
   background-color: #2a272788;
   border-radius: 6px;
   overflow: hidden;
-}
-.item:not(:last-child) {
+
+  &:not(:last-child) {
   margin-bottom: 15px;
 }
-.link{
+`;
+
+export const MovieCardItemLink = styled.div`
   display: flex;
   gap: 15px;
   text-decoration: none;
   color: #fff;
 
-}
-.link:hover .thumb,
-.link:focus .thumb{
+  &:hover .thumb,
+  &:focus .thumb{
   transform: scale(1.01);
 }
-.link:hover .subtitle,
-.link:focus .subtitle {
-  color:red;
-}
+`;
 
-.thumb{
+export const MovieCardImgThumb = styled.div`
   width: 100px;
   flex-shrink: 0;
   transition: transform linear 200ms;
-}
-.subtitle{
+`;
+
+export const MovieCardTitle = styled.p`
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 10px;
   transition: color linear 200ms;
-}
-.text:not(:last-child){
+`;
+
+export const MovieCardText = styled.p`
+  &:not(:last-child){
   margin-bottom: 10px;
 }
+`
+
+
+// .link:hover .subtitle,
+// .link:focus .subtitle {
+//   color:red;
+// }
+
+

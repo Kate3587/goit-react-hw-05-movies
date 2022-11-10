@@ -1,41 +1,40 @@
-import { getMovieDetails } from 'services/MovieAPI/API';
+import { fetchMovieDetails } from 'services/Api/Api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { STATE } from 'services/config/page.state';
-import { useStateMachine } from 'services/hooks/stateMachine';
+import { Status } from 'services/config/Status';
+import { useStateMachine } from 'helpers/hooks/stateMachine';
 
 import { Movie } from 'components/Movie';
-import { Spiner } from 'components/Spiner';
+import { Loader } from 'components/Loader';
 import { ErrorMesage } from 'components/ErrorMesage';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
-  const { isResolved, isLoad, isRejected, setStateMachine } = useStateMachine(
-    STATE.IDLE
+  const { success, loading, error, setStateMachine } = useStateMachine(
+    Status.IDLE
   );
 
   useEffect(() => {
-    setStateMachine(STATE.LOAD);
+    setStateMachine(Status.LOADING);
     get();
 
     async function get() {
       try {
-        const responce = await getMovieDetails(movieId);
+        const responce = await fetchMovieDetails(movieId);
         setMovie({ ...responce });
-        setStateMachine(STATE.RESOLVE);
+        setStateMachine(Status.SUCCESS);
       } catch (error) {
-        setStateMachine(STATE.ERROR);
+        setStateMachine(Status.ERROR);
         console.log(error.message);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (isResolved) return <Movie movie={movie} />;
-  if (isLoad) return <Spiner />;
-  if (isRejected) return <ErrorMesage />;
+  if (success) return <Movie movie={movie} />;
+  if (loading) return <Loader />;
+  if (error) return <ErrorMesage />;
 };
 
 export default MovieDetails;
