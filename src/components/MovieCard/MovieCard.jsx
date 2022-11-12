@@ -6,6 +6,7 @@ import {
   MovieCardTitle, MovieCardText
 } from './MovieCard.styled';
 
+
 export const MovieCard = ({ data }) => {
   const { poster_path, title, release_date, id, overview } = data;
   const location = useLocation();

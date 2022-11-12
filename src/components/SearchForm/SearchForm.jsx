@@ -3,12 +3,13 @@ import { useState } from 'react';
 import { HiSearch } from 'react-icons/hi';
 import { FormForSearch, FormWrapper, FormInput, FormBtn } from './SearchForm.styled';
 
+
 export const SearchForm = ({ onHandleSubmit }) => {
   const [query, setQuery] = useState('');
 
-  const onChange = e => setQuery(e.target.value);
-  const onSubmit = e => {
-    e.preventDefault();
+  const onChange = event => setQuery(event.target.value);
+  const onSubmit = event => {
+    event.preventDefault();
     onHandleSubmit({ value: query });
   };
 

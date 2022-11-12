@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-
 import defaultMovie from '../../../images/defaultMovie.png';
 import {
   PreviewWrapp, PreviewPicture, PictureThumb,
   PictureTag, PictureLink, PictureLinkItem, MoreLinkItem
 } from './Preview.styled';
+
 
 export const Preview = ({ filmCard }) => {
   const { poster_path, title, name, tagline } = filmCard;
@@ -27,18 +27,18 @@ export const Preview = ({ filmCard }) => {
 
         <PictureLink>
           <PictureLinkItem>
-            <MoreLinkItem>
               <NavLink to="cast">
-              Cast
+                <MoreLinkItem>
+                  Cast
+                </MoreLinkItem>
             </NavLink>
-            </MoreLinkItem>
           </PictureLinkItem>
           <PictureLinkItem>
-            <MoreLinkItem>
               <NavLink to="reviews">
-              Reviews
+                <MoreLinkItem>
+                  Reviews
+                </MoreLinkItem>
             </NavLink>
-            </MoreLinkItem>
           </PictureLinkItem>
         </PictureLink>
       </PreviewPicture>

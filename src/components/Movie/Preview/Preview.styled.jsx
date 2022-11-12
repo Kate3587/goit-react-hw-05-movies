@@ -6,13 +6,16 @@ export const PreviewWrapp = styled.div`
 
 export const PreviewPicture = styled.div`
   order: 2;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 export const PictureThumb = styled.div`
-   width: 300px;
-  border-radius: 6px;
+  width: 300px;
+  border-radius: 10px;
   overflow: hidden;
   margin: 0 auto 20px;
+ 
 `;
 
 export const PictureTag = styled.p`
@@ -27,14 +30,14 @@ export const PictureLink = styled.ul`
 `;
 export const PictureLinkItem = styled.li`
   border: 1px solid rgb(255, 255, 255);
-  border-radius: 6px;
+  border-radius: 10px;
   transition: border-color linear 200ms, color linear 200ms;
-  color: white;
+  color: ffffffc1;
 
   &:hover,
   &:focus {
-    border-color: red;
-    color: red
+    border-color: #1404ed;
+    color: #1302f7
   }
 `;
 
@@ -43,5 +46,7 @@ export const MoreLinkItem = styled.div`
   padding: 10px 5px;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  color: inherit;
+  color: #ffffffc1;
+
+ =
 `;

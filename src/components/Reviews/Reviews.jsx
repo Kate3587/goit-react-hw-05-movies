@@ -1,15 +1,13 @@
 import { fetchReview } from 'services/Api/Api';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
 import { Status } from 'services/config/Status';
 import { useStateMachine } from 'helpers/hooks/stateMachine';
-
 import { Loader } from 'components/Loader';
 import { ReviewsItem } from './ReviewsItem';
 import { ErrorMessage } from 'components/ErrorMessage';
-
 import { ReviewsContainer, ReviewsList, ExitMessage} from './Reviews.styled';
+
 
 const Reviews = () => {
   const [review, setReview] = useState([]);

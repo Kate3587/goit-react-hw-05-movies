@@ -1,13 +1,12 @@
 import { fetchMovieDetails } from 'services/Api/Api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 import { Status } from 'services/config/Status';
 import { useStateMachine } from 'helpers/hooks/stateMachine';
-
 import { Movie } from 'components/Movie';
 import { Loader } from 'components/Loader';
 import { ErrorMessage } from 'components/ErrorMessage';
+
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);

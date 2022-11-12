@@ -9,7 +9,8 @@ export const MovieSection = styled.section`
 `;
 
 export const MovieWrapp = styled.div`
-    display: flex;
+  display: flex;
+  flex-direction: column;
   gap: 30px;
 
   max-width: 1200px;

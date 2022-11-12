@@ -5,7 +5,7 @@ export const DescriptionText = styled.div`
     order: 1;
 `;
 export const ExitLink = styled.div`
-   position: absolute;
+  position: absolute;
   right: 10px;
   top: 0;
 
@@ -20,7 +20,7 @@ export const ExitLink = styled.div`
   color: white;
 
   border: 1px solid white;
-  border-radius: 6px;
+  border-radius: 10px;
 
   transition: border-color linear 200ms, color linear 200ms;
 
@@ -35,14 +35,14 @@ export const DescriptionTitle = styled.h2`
    max-width: 500px;
   font-size: 32px;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: #ffffffe4;
   margin-bottom: 20px;
 `;
 
 export const DescriptionTextWrapp = styled.div`
-   padding: 10px;
+   padding: 15px;
   background-color: #0f023c7b;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
   min-height: 200px;
 `
@@ -52,7 +52,7 @@ export const DescriptionOverview = styled.p`
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.6;
-  color: white;
+  color: #fffffff3;
 `;
 
 export const DescriptionCompanyList = styled.ul`

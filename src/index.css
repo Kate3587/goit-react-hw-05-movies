@@ -8,9 +8,12 @@
 }
 
 ul,
-ol {
+ol,
+a {
   list-style: none;
+  text-decoration: none;
 }
+
 
 body {
   margin: 0;

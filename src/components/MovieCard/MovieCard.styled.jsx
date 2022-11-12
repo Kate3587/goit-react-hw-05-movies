@@ -27,6 +27,7 @@ export const MovieCardImgThumb = styled.div`
   width: 100px;
   flex-shrink: 0;
   transition: transform linear 200ms;
+  box-shadow: -1px 0px 21px -7px rgba(253, 253, 253, 0.96);
 `;
 
 export const MovieCardTitle = styled.p`

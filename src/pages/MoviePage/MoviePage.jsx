@@ -1,8 +1,6 @@
 import { fetchMovieByName } from 'services/Api/Api';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
-
 import { Status } from 'services/config/Status';
 import { useStateMachine } from 'helpers/hooks/stateMachine';
 import { MovieCard } from 'components/MovieCard';

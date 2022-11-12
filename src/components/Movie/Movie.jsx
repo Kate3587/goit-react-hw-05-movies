@@ -1,9 +1,9 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Description } from './Description';
 import PropTypes from 'prop-types';
-
 import { Preview } from './Preview';
 import {MovieSection, MovieWrapp} from './Movie.styled'
+
 
 export const Movie = ({ movie }) => {
   const { state } = useLocation();

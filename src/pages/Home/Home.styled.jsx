@@ -25,6 +25,10 @@ export const HomeList = styled.ul`
 export const HomeCard = styled.li`
   border-radius: 6px;
   overflow: hidden;
+  &:hover{
+    transition: scale, 200ms;
+    scale: 1.03;
+  }
 `;
 export const HomeCardLink = styled.div`
   height: 100%;
@@ -41,23 +45,26 @@ export const HomeCardLink = styled.div`
 
   &:hover,
   &:focus{
-  color:red;
+  color: #847cf476;
 }
 `;
 
 export const Overlay = styled.div`
-  position: absolute;
+ position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(0.30turn, #71707b 70%, #0e19af);
+  /* background: linear-gradient(0.40turn, #71707b 70%, #0e19af); */
+  
   opacity: 0.4;
   transition: opacity, 200ms;
-
-  &:hover{
+  
+  /* &:hover,
+  &:focus{
   opacity: 0;
-}
+    } */
+    
 `;
 
 export const Wrapp = styled.div`
@@ -69,4 +76,10 @@ export const Wrapp = styled.div`
 export const HomeFilmName = styled.p`
   margin-top: 15px;
   font-size: 20px;
+  color: #c9c2f3b8
+  
+  &:hover,
+  &:focus{
+    color: #ffffff;
+  }
 `;

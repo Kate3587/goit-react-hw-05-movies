@@ -1,22 +1,23 @@
 import { NavLink } from 'react-router-dom';
 import { Header, HeaderList, HeaderLink} from './AppBar.styled';
 
+
 const AppBar = () => {
   return (
     <>
       <Header>
         <nav>
           <HeaderList>
-            <HeaderLink>
               <NavLink to="/" end>
-                Home
+                <HeaderLink>
+                  Home
+                </HeaderLink>
               </NavLink>
-            </HeaderLink>
-            <HeaderLink>
               <NavLink to="movies">
-                Movies
+                <HeaderLink>
+                  Movies
+                </HeaderLink>
               </NavLink>
-            </HeaderLink>
           </HeaderList>
         </nav>
       </Header>

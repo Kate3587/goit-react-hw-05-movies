@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import { ACTOR } from 'services/config/match';
+import { actor } from 'services/config/match';
 import { Status } from 'services/config/Status';
 import { useStateMachine } from 'helpers/hooks/stateMachine';
-
 import { fetchCast } from 'services/Api/Api';
 import { CastItems } from './CastItems';
 import { Loader } from '../Loader/Loader';
@@ -46,7 +44,7 @@ const Cast = () => {
       {loading && !empty && (
         <CastList>
           {cast.map(item => {
-            if (item.known_for_department !== ACTOR) return null;
+            if (item.known_for_department !== actor) return null;
             return <CastItems key={item.id} item={item} />;
           })}
         </CastList>

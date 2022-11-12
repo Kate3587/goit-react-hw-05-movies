@@ -26,6 +26,6 @@ export const HeaderLink = styled.li`
 
   &:hover,
   &:focus{
-    color: #2200ff;
+    color: #8975f8e0;
   }
 `

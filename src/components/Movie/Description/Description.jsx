@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
-import { AiOutlineRollback } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-
 import { DescriptionAttribute } from './DescriptionAttribute/DescriptionAttribute'
 import { Company } from './Company';
 import {
   DescriptionText, ExitLink, DescriptionTitle,
   DescriptionTextWrapp, DescriptionOverview, DescriptionCompanyList
 } from './Description.styled';
+
 
 export const Description = ({ fields, state }) => {
   const { title, movie, overview, production_companies } = fields;
@@ -16,7 +15,6 @@ export const Description = ({ fields, state }) => {
       <ExitLink>
         <Link to={state?.from ?? '/'}>
           <span>Turn back</span>
-          <AiOutlineRollback />
         </Link>
       </ExitLink>
       

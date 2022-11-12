@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const ReviewItemWrap = styled.li`
-  padding: 10px;
-  border: 2px solid rgb(170, 167, 167);
+  padding: 15px;
   border-radius: 6px;
 
   &:not(:last-child){
@@ -22,7 +21,7 @@ export const UserText = styled.p`
 `;
 
 export const UserRating = styled.p`
-  color: rgba(255, 0, 0, 0.567);
+  color: #1504ff;
 `;
 
 export const ReviewContent = styled.div`
@@ -39,8 +38,8 @@ export const ReviewLink = styled.a`
   color:inherit;
   vertical-align:bottom;
 
-  border: 2px solid rgb(170, 167, 167);
-  border-radius: 6px;
+  border: 1px solid #c8c1f996;
+  border-radius: 10px;
   transition: color linear 200ms, border-color linear 200ms ;
 
   &:hover,
@@ -55,5 +54,5 @@ export const ReviewData = styled.p`
   text-align: end;
   font-style: italic;
   font-weight: 700;
-  color: rgba(255, 0, 0, 0.567);
+  color: #9a9696ac;
 `;

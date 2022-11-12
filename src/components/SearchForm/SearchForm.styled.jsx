@@ -20,9 +20,9 @@ export const FormInput = styled.input`
   transition: border-color linear 200ms;
 
   &:focus{
-    border-color: 0000ed}
+    border-color: #1919d7}
   &:hover{
-  border-color: 0000ed}
+  border-color: #1919d7}
 
   &::placeholder{
  transition: color linear 200ms

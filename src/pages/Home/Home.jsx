@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchMovies } from 'services/Api/Api';
 import { Link } from 'react-router-dom';
-
 import { Status } from 'services/config/Status';
 import { useStateMachine } from 'helpers/hooks/stateMachine';
 import { Loader } from 'components/Loader';
@@ -10,6 +9,7 @@ import {
   HomeSection, HomeTitle, HomeList, HomeCard,
   HomeCardLink, Overlay, Wrapp, HomeFilmName
 } from './Home.styled';
+
 
 const Home = () => {
   const [films, setFilms] = useState([]);
