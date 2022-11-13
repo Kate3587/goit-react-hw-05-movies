@@ -44,8 +44,7 @@ export const ReviewLink = styled.a`
 
   &:hover,
   &:focus{
-  color:red;
-  border-color:red;
+  border-color: #0022ff;
 }
 `;
 

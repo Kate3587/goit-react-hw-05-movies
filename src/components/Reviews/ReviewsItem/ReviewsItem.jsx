@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { AiOutlineLink } from 'react-icons/ai';
+import { RiArrowGoBackLine } from 'react-icons/ri';
 import defaultUser from '../../../images/defaultUser.png';
 import { MATCH_WORD } from 'services/config/match';
 import {normalizeAvatar} from '../../../helpers/Avatar'
@@ -42,7 +42,7 @@ export const ReviewsItem = ({ review }) => {
           target='"_blank"'
         >
           Original
-          {<AiOutlineLink width="20px" height="20px" />}
+          {<RiArrowGoBackLine width="20px" height="20px" />}
         </ReviewLink>
       </article>
     </ReviewItemWrap>

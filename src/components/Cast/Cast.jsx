@@ -13,7 +13,7 @@ import { Wrapper, CastList, MessageTitle } from './Cast.styled';
 const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
-  const { loading, error, setStateMachine } = useStateMachine(
+  const { success, loading, error, setStateMachine } = useStateMachine(
     Status.IDLE
   );
 
@@ -41,7 +41,7 @@ const Cast = () => {
           We don't have any information about actors.
         </MessageTitle>
       )}
-      {loading && !empty && (
+      {success && !empty && (
         <CastList>
           {cast.map(item => {
             if (item.known_for_department !== actor) return null;

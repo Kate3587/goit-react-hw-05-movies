@@ -29,7 +29,7 @@ const MovieDetails = () => {
         console.log(error.message);
       }
     }
-  }, [movieId]);
+  }, []);
 
   if (success) return <Movie movie={movie} />;
   if (loading) return <Loader />;

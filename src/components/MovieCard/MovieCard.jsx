@@ -3,23 +3,27 @@ import { Link, useLocation } from 'react-router-dom';
 import defaultMovie from '../../images/defaultMovie.png'
 import {
   MovieCardItem, MovieCardItemLink, MovieCardImgThumb,
-  MovieCardTitle, MovieCardText
+  MovieCardTitle, MovieCardText, MovieCardWrap
 } from './MovieCard.styled';
 
 
 export const MovieCard = ({ data }) => {
+  console.log (data)
   const { poster_path, title, release_date, id, overview } = data;
   const location = useLocation();
   return (
+   
     <MovieCardItem>
-      <MovieCardItemLink>
+      <MovieCardWrap>
+        
         <Link
         to={`/movies/${id}`}
         state={{ from: location }}
         >
-        <MovieCardImgThumb>
-          <img
-            width={'100px'}
+        <MovieCardItemLink>
+       
+          <MovieCardImgThumb
+            width={'150px'}
             src={
               poster_path
                 ? `https://image.tmdb.org/t/p/w200${poster_path}`
@@ -27,14 +31,17 @@ export const MovieCard = ({ data }) => {
             }
             alt={title}
           />
-        </MovieCardImgThumb>
+   
         <span>
           <MovieCardTitle>{title}</MovieCardTitle>
           <MovieCardText>{release_date}</MovieCardText>
           <MovieCardText>{overview}</MovieCardText>
         </span>
-        </Link>
+        
         </MovieCardItemLink>
+        </Link>
+      </MovieCardWrap>
+      
     </MovieCardItem>
   );
 };
@@ -48,3 +55,4 @@ MovieCard.propTypes = {
     overview: PropTypes.string,
   }),
 };
+

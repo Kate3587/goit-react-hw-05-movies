@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { HiSearch } from 'react-icons/hi';
+import { ImSearch } from 'react-icons/im';
 import { FormForSearch, FormWrapper, FormInput, FormBtn } from './SearchForm.styled';
 
 
@@ -24,7 +24,7 @@ export const SearchForm = ({ onHandleSubmit }) => {
         />
         {query && (
           <FormBtn type="submit">
-            <HiSearch />
+            <ImSearch />
           </FormBtn>
         )}
       </FormWrapper>

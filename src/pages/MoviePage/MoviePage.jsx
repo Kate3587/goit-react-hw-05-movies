@@ -15,7 +15,7 @@ const MoviePage = () => {
   const [movies, setMovies] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [query, setQuery] = useSearchParams();
-  const { succes, loading, error, setStateMachine } = useStateMachine(
+  const { success, loading, error, setStateMachine } = useStateMachine(
     Status.IDLE
   );
 
@@ -47,29 +47,34 @@ const MoviePage = () => {
       }
     }
   }, [filmNameStr, pageStr, setStateMachine]);
+  console.log(movies)
 
   const moviesAmount = movies.length;
   return (
+    
     <MoviePageWrapp>
       <SearchForm onHandleSubmit={handleWriteQuery} />
       {loading && <Loader />}
-      {moviesAmount > 0 && succes && (
+      {moviesAmount > 0 && success && (
         <MoviePageList>
-          {movies.map(({ poster_path, title, id, release_date, overview }) => (
+          
+          {/* { poster_path, title, id, release_date, overview } */}
+          {movies.map((movie) => (
+            
             <MovieCard
-              key={id}
-              data={{ poster_path, title, release_date, id, overview }}
+              key={movie.id}
+              data={movie}
             />
           ))}
         </MoviePageList>
       )}
-      {succes && moviesAmount === 0 && (
+      {success && moviesAmount === 0 && (
         <ExitMessage>
           Sorry, we haven't any information about film {query}.
         </ExitMessage>
       )}
       {error && <ErrorMessage />}
-      {totalPages > 1 && succes && (
+      {totalPages > 1 && success && (
         <Pagination
           totalPages={totalPages}
           page={pageStr}

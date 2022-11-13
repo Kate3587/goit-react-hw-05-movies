@@ -7,6 +7,11 @@ export const MoviePageWrapp = styled.section`
 `;
 
 export const MoviePageList = styled.ul`
+  display: inline-flex;
+  gap: 20px;
+ 
+
+  flex-wrap: wrap;
   padding: 25px;
 `;
 
