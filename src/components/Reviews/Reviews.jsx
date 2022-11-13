@@ -30,7 +30,7 @@ const Reviews = () => {
         console.log(error.message);
       }
     }
-  }, []);
+  }, [movieId, setStateMachine]);
   const empty = review.length < 1;
 
   return (
